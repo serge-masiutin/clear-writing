@@ -1,8 +1,8 @@
 # Clear Writing / Ясный текст
 
-An agent skill for writing and editing clear English and Russian: emails, documentation, articles, reports, presentations, and UI copy. It helps an AI agent explain what matters while preserving facts, conditions, and the author's intent. Both languages have complete guides, examples, and review cases.
+Clear Writing gives AI agents practical guidance for writing and editing in English and Russian. Use it to make emails, documentation, articles, reports, presentations, and UI copy easier to understand without losing meaning.
 
-Скилл для AI-агентов, которые пишут и редактируют письма, документацию, статьи, отчёты, презентации и тексты интерфейса на русском и английском. Помогает объяснить главное, сохранив факты, условия и замысел автора. Для обоих языков есть полные руководства, примеры и контрольные случаи.
+Clear Writing — скилл с практическими правилами письма и редактуры для AI-агентов. Помогает сделать письма, документацию, статьи, отчёты, презентации и тексты интерфейса понятнее, сохранив смысл. Работает с русским и английским текстом.
 
 [English](#english) · [Русский](#русский)
 
@@ -10,10 +10,12 @@ An agent skill for writing and editing clear English and Russian: emails, docume
 
 ### What it does
 
-- **Clarity beyond brevity.** Works on the reader's needs, context, structure, explanations, wording, and tone. Cutting words is useful only when it helps the reader.
-- **Meaning first.** Instructs the agent to preserve negation, uncertainty, numbers, units, deadlines, names, and technical contracts, and to avoid inventing facts.
-- **Two full editions.** Selects the guide by the target text's language. Editing does not imply translation; bilingual work uses both guides.
-- **Self-contained guidance.** Includes six topic chapters per language, editing patterns, a decision table, a glossary, and review cases. No books or external summaries are needed to apply the skill.
+- **Organize the message.** Put the reader's question first, choose a useful structure, and explain unfamiliar ideas with examples.
+- **Remove clutter.** Replace bureaucratic phrasing and vague claims with direct language. Keep the detail the reader needs.
+- **Preserve meaning.** Keep facts, conditions, negation, uncertainty, numbers, and deadlines. Do not invent missing information.
+- **Use the right language.** Each language has a complete guide. Editing keeps the source language unless translation is requested; bilingual work uses both guides.
+
+The skill contains instructions and reference material for an AI agent. It needs no books or external summaries.
 
 ### Example
 
@@ -26,11 +28,13 @@ Keep the deadline and the condition. Return only the edited text.
 access to the service will be suspended."
 ```
 
-Illustrative edit, not a guaranteed model response:
+Example edit:
 
 > If we do not receive payment by 15 October, we will suspend access to the service.
 
-You can also ask it to draft instructions, explain a technical concept to a particular audience, restructure a report, or edit UI copy. Supply the source text or facts, the audience, and any wording or format that must stay unchanged.
+For other tasks, provide the text or source facts, describe the reader, and specify what must stay unchanged. For example: “Explain this API to a junior developer” or “Restructure this report so the decision comes first.”
+
+`$clear-writing` explicitly invokes the skill in Codex. Other agents may use different invocation syntax.
 
 ### Install
 
@@ -47,7 +51,7 @@ npx skills add serge-masiutin/clear-writing --skill clear-writing -a codex
 npx skills add serge-masiutin/clear-writing --skill clear-writing -a claude-code
 ```
 
-Choose one command for your agent. Add `-g` for a user-wide installation instead of a project installation. Review any existing `clear-writing` installation before replacing it.
+Choose the command for your agent. Add `-g` to make the skill available across your projects. If `clear-writing` is already installed, check your local changes before replacing it.
 
 Alternatively, use Git and copy the complete skill folder into your agent's skills directory. For a project using `.agents/skills` (POSIX shell):
 
@@ -58,11 +62,11 @@ test ! -e .agents/skills/clear-writing && \
   cp -R clear-writing-source/skills/clear-writing .agents/skills/clear-writing
 ```
 
-The copy command refuses to overwrite an existing destination. **Copy the whole folder, not just `SKILL.md`: the guides and references are required.** Follow your agent's instructions for discovering newly installed skills. The invocation syntax depends on the agent; `$clear-writing` is an explicit Codex invocation.
+The copy runs only if the destination does not exist. **Copy the whole folder:** `SKILL.md` links to the guides and references beside it. Follow your agent's instructions for loading newly installed skills.
 
-### Contents and maintenance
+### Explore the guides
 
-The entry point is [`skills/clear-writing/SKILL.md`](skills/clear-writing/SKILL.md). It routes the agent to the appropriate language and topic:
+Start with [`SKILL.md`](skills/clear-writing/SKILL.md), which tells the agent which guide to read. Each edition includes:
 
 | Material | English | Russian |
 | --- | --- | --- |
@@ -72,24 +76,26 @@ The entry point is [`skills/clear-writing/SKILL.md`](skills/clear-writing/SKILL.
 | Terminology | [Glossary](skills/clear-writing/en/glossary.md) | [Словарь](skills/clear-writing/ru/glossary.md) |
 | Behavioral review | [Cases](skills/clear-writing/en/references/review-cases.md) | [Случаи](skills/clear-writing/ru/references/review-cases.md) |
 
-The six chapters cover readers and context, words and sentences, explanation and evidence, structure, presentation, and writing formats. When changing the method, follow the [localization review](skills/clear-writing/references/localization-review.md) and review both language editions. Review cases are manual evaluation material, not an automated test suite. Model output still needs review for factual accuracy and task-specific requirements.
+Six topic chapters cover the reader, wording, evidence, structure, presentation, and writing formats. The agent loads the relevant chapters as needed.
 
-### Origin and license
+To change the skill, follow the [localization review](skills/clear-writing/references/localization-review.md) and work through the review cases in both languages. These are manual checks; they do not replace reviewing the agent's output for your task.
 
-Extracted from [serge-masiutin/rails-template](https://github.com/serge-masiutin/rails-template/tree/3e4ad0db288137d5800645ca47f7457fa93967d8/.agents/skills/clear-writing), commit `3e4ad0db288137d5800645ca47f7457fa93967d8`. The initial standalone package preserves all 24 source skill files byte for byte, including skill metadata version `7`.
+### Basis and license
 
-The method is an independent practical adaptation of «Пиши, сокращай» by Maxim Ilyakhov and Lyudmila Sarycheva (4th edition, 2024) and «Ясно, понятно» by Maxim Ilyakhov (2021). It is not an official skill by the authors and does not include the books. Rules and teaching examples were written for the skill.
+The guidance draws on «Пиши, сокращай» by Maxim Ilyakhov and Lyudmila Sarycheva (4th edition, 2024) and «Ясно, понятно» by Maxim Ilyakhov (2021). This is an independent adaptation, not an official skill by the authors. The books are not included; the rules and teaching examples were written for this skill.
 
 [MIT license](LICENSE), copyright © 2026 Serge Masiutin. A copy of the license is included inside the installable skill folder.
 
 ## Русский
 
-### Что делает скилл
+### Чем помогает
 
-- **Работает не только с краткостью.** Учитывает задачу читателя, контекст, структуру, объяснения, слова и тон. Сокращение полезно, только если помогает понять текст.
-- **Сохраняет смысл.** Предписывает сохранять отрицания, степень уверенности, числа, единицы, сроки, названия и технические контракты; запрещает выдумывать факты.
-- **Содержит две полные версии.** Выбирает руководство по языку целевого текста. Редактура не означает перевод; для двуязычного результата используются оба руководства.
-- **Не требует книг.** В каждой языковой версии есть шесть тематических глав, приёмы редактуры, таблица выбора, словарь и контрольные случаи. Все материалы для применения входят в скилл.
+- **Выстроить объяснение.** Начать с вопроса читателя, выбрать подходящую структуру и пояснить незнакомые идеи примерами.
+- **Убрать лишнее.** Заменить канцелярит и расплывчатые оценки прямыми формулировками. Сохранить подробности, которые нужны читателю.
+- **Сохранить смысл.** Не потерять факты, условия, отрицания, степень уверенности, числа и сроки. Не выдумывать недостающие сведения.
+- **Выбрать язык.** Для каждого языка есть полное руководство. При редактуре язык исходника сохраняется, если перевод не запрошен; для двуязычного текста используются оба руководства.
+
+Скилл состоит из инструкций и справочных материалов для AI-агента. Книги и внешние конспекты для работы не нужны.
 
 ### Пример
 
@@ -102,11 +108,13 @@ The method is an independent practical adaptation of «Пиши, сокраща�
 до 15 октября доступ к сервису будет приостановлен».
 ```
 
-Пример редактуры, а не гарантированный ответ модели:
+Пример редактуры:
 
 > Если оплата не поступит до 15 октября, мы приостановим доступ к сервису.
 
-Также можно попросить написать инструкцию, объяснить техническую тему определённой аудитории, перестроить отчёт или отредактировать текст интерфейса. Передайте исходный текст или факты, опишите читателя и укажите, какие формулировки и формат нужно сохранить.
+Для других задач передайте текст или исходные факты, опишите читателя и укажите, что нельзя менять. Например: «Объясни этот API начинающему разработчику» или «Перестрой отчёт: начни с решения».
+
+`$clear-writing` явно вызывает скилл в Codex. У других агентов синтаксис вызова может отличаться.
 
 ### Установка
 
@@ -123,7 +131,7 @@ npx skills add serge-masiutin/clear-writing --skill clear-writing -a codex
 npx skills add serge-masiutin/clear-writing --skill clear-writing -a claude-code
 ```
 
-Выберите одну команду для своего агента. Добавьте `-g`, если скилл должен быть доступен во всех проектах пользователя. Перед заменой проверьте существующую установку `clear-writing`.
+Выберите команду для своего агента. Добавьте `-g`, чтобы скилл был доступен во всех ваших проектах. Если `clear-writing` уже установлен, перед заменой проверьте свои локальные правки.
 
 Другой способ — клонировать репозиторий через Git и скопировать папку скилла целиком. Для проекта, который использует `.agents/skills`, выполните в POSIX-совместимой оболочке:
 
@@ -134,11 +142,11 @@ test ! -e .agents/skills/clear-writing && \
   cp -R clear-writing-source/skills/clear-writing .agents/skills/clear-writing
 ```
 
-Команда копирования не заменяет существующую папку. **Копируйте всю папку, а не только `SKILL.md`: руководства и справочники необходимы для работы.** Для обнаружения нового скилла следуйте инструкции вашего агента. Синтаксис вызова зависит от агента; `$clear-writing` — явный вызов в Codex.
+Копирование выполнится, только если папки назначения ещё нет. **Копируйте папку целиком:** `SKILL.md` ссылается на руководства и справочники внутри неё. Для подключения нового скилла следуйте инструкции вашего агента.
 
-### Состав и развитие
+### Что внутри
 
-Точка входа — [`skills/clear-writing/SKILL.md`](skills/clear-writing/SKILL.md). Она направляет агента к нужному языку и теме:
+Начните с [`SKILL.md`](skills/clear-writing/SKILL.md): он указывает агенту, какое руководство читать. В каждой языковой версии есть:
 
 | Материал | Русский | English |
 | --- | --- | --- |
@@ -148,12 +156,12 @@ test ! -e .agents/skills/clear-writing && \
 | Термины | [Словарь](skills/clear-writing/ru/glossary.md) | [Glossary](skills/clear-writing/en/glossary.md) |
 | Проверка поведения | [Случаи](skills/clear-writing/ru/references/review-cases.md) | [Cases](skills/clear-writing/en/references/review-cases.md) |
 
-Шесть глав посвящены читателю и контексту, словам и предложениям, объяснению и доказательствам, структуре, подаче и форматам текста. При изменении методики пройдите [проверку локализации](skills/clear-writing/references/localization-review.md) и контрольные случаи обеих версий. Это материалы для ручной оценки, а не автоматические тесты. Ответы модели нужно проверять на достоверность и соответствие конкретной задаче.
+Шесть тематических глав посвящены читателю, формулировкам, доказательствам, структуре, подаче и форматам текста. Агент читает нужные главы по мере работы.
 
-### Источник и лицензия
+При изменении скилла пройдите [проверку локализации](skills/clear-writing/references/localization-review.md) и контрольные случаи на обоих языках. Это ручные проверки; они не заменяют оценку ответа агента в вашей задаче.
 
-Скилл выделен из [serge-masiutin/rails-template](https://github.com/serge-masiutin/rails-template/tree/3e4ad0db288137d5800645ca47f7457fa93967d8/.agents/skills/clear-writing), коммит `3e4ad0db288137d5800645ca47f7457fa93967d8`. Первая самостоятельная поставка сохраняет все 24 исходных файла скилла побайтово, включая версию `7` в метаданных.
+### Основа и лицензия
 
-Методика — самостоятельная практическая адаптация книг «Пиши, сокращай» Максима Ильяхова и Людмилы Сарычевой (4-е издание, 2024) и «Ясно, понятно» Максима Ильяхова (2021). Это не официальный скилл авторов; сами книги в поставку не входят. Правила и учебные примеры написаны для скилла.
+В основе — подходы из книг «Пиши, сокращай» Максима Ильяхова и Людмилы Сарычевой (4-е издание, 2024) и «Ясно, понятно» Максима Ильяхова (2021). Это самостоятельная адаптация, а не официальный скилл авторов. Книги в состав скилла не входят; правила и учебные примеры написаны для него.
 
 [Лицензия MIT](LICENSE), © 2026 Serge Masiutin. Копия лицензии включена в устанавливаемую папку скилла.
