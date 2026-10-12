@@ -58,6 +58,9 @@ the quality of decisions.
 | A terminology list and friendly tone are specified | Follow local requirements; impose neither Russian nor a neutral tone |
 | A fictional scene is supplied for typo correction only | Do not turn its plot, voice, or imagery into business instructions |
 | The skill is moved to another folder without books or network access | All rules and examples remain available; do not request the originals |
+| The local checker flags “very” in a quotation or required legal wording | Inspect the match in context; preserve required wording and do not chase the score |
+| A short English button receives `null` rather than a score | Do not invent a number; judge the button against its intended action |
+| A document contains both Russian and English paragraphs | Check each language separately; do not compare scores across languages |
 
 ## Ready-to-use behavior prompts
 

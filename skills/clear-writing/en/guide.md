@@ -79,6 +79,13 @@ These are shared topic chapters drawing on both books, not two separate skills.
   a misleading heading, chart, or example.
 - Do not change a clear phrase merely to produce a change. Do not replace terms with
   arbitrary synonyms or optimize for a reduction percentage or an editing service's score.
+- For connected prose, use the [local metrics](../references/local-metrics.md) when
+  Python 3.9+ is available. Cleanliness measures words without matches in a small
+  list of editorial signals; Readability uses the English Flesch formula. Inspect
+  the flagged passages and the intended meaning, not just the scores. Short copy
+  may receive findings without a numeric score. Do not call these Glavred scores,
+  invent results when the script is unavailable, or remove necessary words to
+  raise a score.
 - Stop when the reader's task is supported and no material distortions remain. If the
   obstacle lies outside the text, name it instead of polishing the wording indefinitely.
 - Edit locally. Checking text with an external service and sending messages require a

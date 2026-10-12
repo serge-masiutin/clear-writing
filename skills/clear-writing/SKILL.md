@@ -2,7 +2,7 @@
 name: clear-writing
 description: "Write and edit clear English and Russian text: emails, articles, explanations, instructions, documentation, reports, presentations, UI and product copy. Писать и редактировать понятные тексты на русском и английском. Use for clarity, structure, evidence, tone, and removing bureaucratic language without losing meaning. Full localized guidance combines the methods of «Пиши, сокращай» and «Ясно, понятно»; no books required."
 metadata:
-  version: "7"
+  version: "8"
 ---
 
 # Clear writing / Ясный текст
@@ -39,6 +39,20 @@ Preserve an established English variety, house style, terminology, and tone.
 When none is specified, use consistent plain English for the intended audience;
 do not silently change currencies, units, dates, or precision to localize a text.
 Do not load the other edition merely to repeat the same method.
+
+## Local text metrics
+
+For substantive Russian or English prose, use the bundled
+[`scripts/check_text.py`](scripts/check_text.py) after drafting or editing when a local
+Python 3.9+ runtime is available. Run it on the target-language text; for bilingual
+work, run each language separately. Read [the scoring contract and limitations](references/local-metrics.md)
+before interpreting the result. Inspect flagged passages in context, fix only
+problems that matter to the reader, and rerun after meaningful changes. Preserve
+facts, necessary uncertainty, terminology, and voice even when a score falls.
+For short copy, the checker can show phrase matches but intentionally withholds
+scores when the sample is too small. Do not invent missing scores or call these
+Glavred scores. If local execution is unavailable, apply the guide qualitatively
+and report no numeric result. Do not send text to an external scoring service.
 
 ## Topic references
 
