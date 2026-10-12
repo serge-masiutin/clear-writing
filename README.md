@@ -25,6 +25,13 @@ scores or a verdict on the text. See the [method and limits](skills/clear-writin
 python3 skills/clear-writing/scripts/check_text.py --language en --file article.txt
 ```
 
+For substantive prose, the skill also requests a separate editor agent when the host
+supports and permits delegation. The editor checks the source, proposes a revision,
+and interprets local metrics; the writer verifies the changes. Reviews are bounded
+to one pass and, for a remaining critical issue, one focused recheck. Without agent
+delegation, the skill uses self-review and does not claim independent review.
+See the [editor contract](skills/clear-writing/references/independent-editor.md).
+
 ### Example
 
 After installation, ask your agent:
@@ -112,6 +119,13 @@ The guidance draws on «Пиши, сокращай» by Maxim Ilyakhov and Lyudm
 ```sh
 python3 skills/clear-writing/scripts/check_text.py --language ru --file article.txt
 ```
+
+Для содержательных текстов скилл также подключает отдельного агента-редактора,
+если среда поддерживает и разрешает делегирование. Редактор сверяет текст с исходником,
+предлагает правки и учитывает локальные метрики; основной агент проверяет изменения.
+Предусмотрен один проход и, при оставшейся критической ошибке, одна прицельная
+повторная проверка. Без делегирования скилл проводит самопроверку и не называет её
+независимой. См. [контракт редактора](skills/clear-writing/references/independent-editor.md).
 
 ### Пример
 

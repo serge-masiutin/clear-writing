@@ -92,6 +92,17 @@ These are shared topic chapters drawing on both books, not two separate skills.
   corresponding request; permission to prepare a draft does not authorize either action.
 - When changing this skill, work through the [review cases](references/review-cases.md).
 
+## Independent editor
+
+For substantive prose, follow the [independent editor contract](../references/independent-editor.md)
+after drafting and before delivery. Give a separate agent the request, source, draft,
+protected constraints, and actual local measurements. The editor checks meaning first,
+then reader usefulness, structure, wording, and tone, and proposes an edited version.
+Verify its changes against the source and rerun metrics after meaningful edits.
+Use one pass, with at most one focused recheck for an unresolved critical meaning or
+contract issue. Skip delegation for isolated labels, typo-only edits, or when the
+user declines it. If the host cannot delegate, self-review and do not claim independence.
+
 ## Output
 
 When editing, return the finished text in the requested format. When working on a file,
