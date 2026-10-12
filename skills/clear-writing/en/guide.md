@@ -79,11 +79,29 @@ These are shared topic chapters drawing on both books, not two separate skills.
   a misleading heading, chart, or example.
 - Do not change a clear phrase merely to produce a change. Do not replace terms with
   arbitrary synonyms or optimize for a reduction percentage or an editing service's score.
+- For connected prose, use the [local metrics](../references/local-metrics.md) when
+  Python 3.9+ is available. Cleanliness measures words without matches in a small
+  list of editorial signals; Readability uses the English Flesch formula. Inspect
+  the flagged passages and the intended meaning, not just the scores. Short copy
+  may receive findings without a numeric score. Do not call these Glavred scores,
+  invent results when the script is unavailable, or remove necessary words to
+  raise a score.
 - Stop when the reader's task is supported and no material distortions remain. If the
   obstacle lies outside the text, name it instead of polishing the wording indefinitely.
 - Edit locally. Checking text with an external service and sending messages require a
   corresponding request; permission to prepare a draft does not authorize either action.
 - When changing this skill, work through the [review cases](references/review-cases.md).
+
+## Independent editor
+
+For substantive prose, follow the [independent editor contract](../references/independent-editor.md)
+after drafting and before delivery. Give a separate agent the request, source, draft,
+protected constraints, and actual local measurements. The editor checks meaning first,
+then reader usefulness, structure, wording, and tone, and proposes an edited version.
+Verify its changes against the source and rerun metrics after meaningful edits.
+Use one pass, with at most one focused recheck for an unresolved critical meaning or
+contract issue. Skip delegation for isolated labels, typo-only edits, or when the
+user declines it. If the host cannot delegate, self-review and do not claim independence.
 
 ## Output
 

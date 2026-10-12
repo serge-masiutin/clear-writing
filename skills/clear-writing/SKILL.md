@@ -2,7 +2,7 @@
 name: clear-writing
 description: "Write and edit clear English and Russian text: emails, articles, explanations, instructions, documentation, reports, presentations, UI and product copy. Писать и редактировать понятные тексты на русском и английском. Use for clarity, structure, evidence, tone, and removing bureaucratic language without losing meaning. Full localized guidance combines the methods of «Пиши, сокращай» and «Ясно, понятно»; no books required."
 metadata:
-  version: "7"
+  version: "9"
 ---
 
 # Clear writing / Ясный текст
@@ -39,6 +39,35 @@ Preserve an established English variety, house style, terminology, and tone.
 When none is specified, use consistent plain English for the intended audience;
 do not silently change currencies, units, dates, or precision to localize a text.
 Do not load the other edition merely to repeat the same method.
+
+## Independent editorial review
+
+After drafting substantive prose, request one separate editor agent before delivering
+it, when the host supports delegation and its permissions allow it. Follow
+[the editor contract](references/independent-editor.md). This is the default for
+articles, explanations, reports, documentation, and substantial emails, including
+new writing. Skip delegation for isolated labels, typo-only changes, or an explicit
+request to avoid it. Do not expand the requested editing scope.
+
+The writer owns the final text: verify the editor's proposals against the source,
+apply justified changes, and rerun available local metrics after meaningful edits.
+If delegation is unavailable or prohibited, perform the same checks yourself and
+briefly disclose that independent review was unavailable, unless the requested
+output must contain only the finished text. Never claim an independent review occurred.
+
+## Local text metrics
+
+For substantive Russian or English prose, use the bundled
+[`scripts/check_text.py`](scripts/check_text.py) after drafting or editing when a local
+Python 3.9+ runtime is available. Run it on the target-language text; for bilingual
+work, run each language separately. Read [the scoring contract and limitations](references/local-metrics.md)
+before interpreting the result. Inspect flagged passages in context, fix only
+problems that matter to the reader, and rerun after meaningful changes. Preserve
+facts, necessary uncertainty, terminology, and voice even when a score falls.
+For short copy, the checker can show phrase matches but intentionally withholds
+scores when the sample is too small. Do not invent missing scores or call these
+Glavred scores. If local execution is unavailable, apply the guide qualitatively
+and report no numeric result. Do not send text to an external scoring service.
 
 ## Topic references
 

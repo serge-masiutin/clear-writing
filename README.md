@@ -16,6 +16,21 @@ Clear Writing — скилл с практическими правилами п
 - **Use the right language.** Each language has a complete guide. Editing keeps the source language unless translation is requested; bilingual work uses both guides.
 
 The skill contains instructions and reference material for an AI agent. It needs no books or external summaries.
+For Russian and English prose, it also includes an optional, offline Python 3.9+
+checker for **Cleanliness** and **Readability**. Its JSON report highlights review
+phrases and long sentences. The scores are Clear Writing indicators, not Glavred
+scores or a verdict on the text. See the [method and limits](skills/clear-writing/references/local-metrics.md).
+
+```sh
+python3 skills/clear-writing/scripts/check_text.py --language en --file article.txt
+```
+
+For substantive prose, the skill also requests a separate editor agent when the host
+supports and permits delegation. The editor checks the source, proposes a revision,
+and interprets local metrics; the writer verifies the changes. Reviews are bounded
+to one pass and, for a remaining critical issue, one focused recheck. Without agent
+delegation, the skill uses self-review and does not claim independent review.
+See the [editor contract](skills/clear-writing/references/independent-editor.md).
 
 ### Example
 
@@ -96,6 +111,21 @@ The guidance draws on «Пиши, сокращай» by Maxim Ilyakhov and Lyudm
 - **Выбрать язык.** Для каждого языка есть полное руководство. При редактуре язык исходника сохраняется, если перевод не запрошен; для двуязычного текста используются оба руководства.
 
 Скилл состоит из инструкций и справочных материалов для AI-агента. Книги и внешние конспекты для работы не нужны.
+Для русской и английской прозы в нём также есть необязательная локальная проверка
+на Python 3.9+: **«Чистота»** и **«Читаемость»**. JSON-отчёт указывает фразы для проверки
+и длинные предложения. Это собственные показатели Clear Writing, а не баллы
+Главреда или итоговая оценка текста. См. [методику и ограничения](skills/clear-writing/references/local-metrics.md).
+
+```sh
+python3 skills/clear-writing/scripts/check_text.py --language ru --file article.txt
+```
+
+Для содержательных текстов скилл также подключает отдельного агента-редактора,
+если среда поддерживает и разрешает делегирование. Редактор сверяет текст с исходником,
+предлагает правки и учитывает локальные метрики; основной агент проверяет изменения.
+Предусмотрен один проход и, при оставшейся критической ошибке, одна прицельная
+повторная проверка. Без делегирования скилл проводит самопроверку и не называет её
+независимой. См. [контракт редактора](skills/clear-writing/references/independent-editor.md).
 
 ### Пример
 
