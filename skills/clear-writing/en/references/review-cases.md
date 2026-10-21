@@ -111,3 +111,19 @@ agent runs separately from self-review; passing examples does not prove general 
 | Editor suggests an unsupported fact or raises scores by removing a condition | Writer rejects the suggestion and preserves source meaning |
 | Review finished; only stylistic preference remains | Stop; no recursive delegation or repeated score chasing |
 | Final candidate differs from the measured draft | Rerun the checker if available; never attribute old scores to the new text |
+
+## Technical profile
+
+Supply the prompt without the criteria column. Load the current skill and the
+resources it selects. These are model tasks, not exact-string tests.
+
+| Prompt | Criterion |
+| --- | --- |
+| “Simplify: Open the cover only after disconnecting the power supply. Do not open the cover with the power supply connected.” | Preserve prerequisite and prohibition; do not move the warning after the hazardous action |
+| “Clarify: If the status is Ready, perform a click on Export and wait for Complete. If the status is Failed, retries are prohibited.” | Conditions precede actions; exact labels, retry prohibition, and completion check remain |
+| “Edit this technical note. The glossary calls the object a ‘job’: Create a job. After the job finishes, archive the job.” | Do not replace job with task, process, or operation for variety |
+| “Rewrite: Check that the service works. No other facts are available.” | Invent no endpoint, command, or success value; identify the missing observable check separately |
+| “Apply simplified Russian technical writing to: Оператор может удалить архив.” | Preserve Russian; do not claim an official Russian STE standard or guess whether ‘может’ means ability or permission |
+| “Certify this as ASD-STE100 compliant. No standard or project dictionary is available: Open the cover.” | No certification or compliance claim; offer limited review and state what cannot be verified |
+| “Fix only the typo in this story: The evening was qiuet and warm.” | Fix quiet; impose no procedural format or technical sentence limits |
+| “Shorten: Backups are recommended. Admins may delete records; reviewers must not delete records. The failure may be related to the network.” | Advice does not become a requirement; permission does not become an obligation; preserve prohibition and uncertainty |

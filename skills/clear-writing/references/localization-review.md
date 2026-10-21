@@ -6,7 +6,7 @@ Use only when changing or reviewing this skill, not for ordinary editing tasks.
 
 - Keep one discoverable `SKILL.md`. The language-specific entry points are `ru/guide.md`
   and `en/guide.md`; neither is a separate skill.
-- Keep the same 11 relative Markdown paths in each edition: `guide.md`, `cheatsheet.md`,
+- Keep the same 12 relative Markdown paths in each edition: `guide.md`, `technical.md`, `cheatsheet.md`,
   `patterns.md`, `glossary.md`, six `chapters/ch01-…` through `ch06-…` files, and
   `references/review-cases.md`. Check all local links after moving a file.
 - Compare corresponding sections, table rows, numbered steps, examples, qualifications,
@@ -21,6 +21,9 @@ Use only when changing or reviewing this skill, not for ordinary editing tasks.
   belongs in the root; a grammatical rule need not be copied literally into the other language.
 - Review future changes in both editions. Inventory, links, hashes, and structural checks
   can catch missing material; none proves semantic equivalence or good editing.
+- Keep technical profiles equivalent in purpose, not in English-specific grammar.
+  Preserve the STE-informed/compliance distinction and the Russian profile's local,
+  non-normative status. Run the technical cases in both editions when changing them.
 - When synchronizing repositories, copy the entire skill directory and compare file
   inventories and SHA-256 hashes. Update any source pins and archives with the same bytes.
 

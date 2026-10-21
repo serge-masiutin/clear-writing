@@ -61,6 +61,7 @@ the task; never claim that a score measures comprehension or overall quality.
   Paraphrase and usability testing answer questions that automated scores cannot.
 
 This checker does not test grammar, spelling, factual accuracy, tone, accessibility,
+ASD-STE100 vocabulary, its word-counting rules, or compliance with any standard,
 or whether a reader can complete their task. It is intended for prose, not code,
 tables, raw Markdown, or mixed-language documents. Check bilingual passages in
 separate invocations. Input over 200,000 characters, empty input, and a mismatched

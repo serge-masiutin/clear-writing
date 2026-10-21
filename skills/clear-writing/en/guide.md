@@ -27,6 +27,10 @@ in this folder. Do not search for or request books, PDFs, or external summaries 
 
 ## Workflow
 
+For technical procedures, setup, troubleshooting, and technical descriptions, also
+read the [practical technical profile](technical.md). Do not impose its constraints
+on ordinary emails and articles without a corresponding task.
+
 These steps are enough for a short edit. Load detailed guidance only when needed.
 
 1. **Identify the reader's benefit.** Who is the text for, in what situation will they

@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+set -euo pipefail
+root="$(cd "$(dirname "$0")/.." && pwd)"
+cd "$root"
+export PYTHONDONTWRITEBYTECODE=1
+python3 -m unittest discover -s tests -v
+ruby -c bin/gh
+for script in bin/gh-login bin/setup-git bin/check; do
+  bash -n "$script"
+done
+git diff --check

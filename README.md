@@ -14,6 +14,9 @@ Clear Writing — скилл с практическими правилами п
 - **Remove clutter.** Replace bureaucratic phrasing and vague claims with direct language. Keep the detail the reader needs.
 - **Preserve meaning.** Keep facts, conditions, negation, uncertainty, numbers, and deadlines. Do not invent missing information.
 - **Use the right language.** Each language has a complete guide. Editing keeps the source language unless translation is requested; bilingual work uses both guides.
+- **Clarify technical steps.** Technical profiles cover prerequisites, conditions,
+  consistent terms, warnings, and observable results: STE-informed English and
+  plain technical Russian. They do not certify compliance with a standard.
 
 The skill contains instructions and reference material for an AI agent. It needs no books or external summaries.
 For Russian and English prose, it also includes an optional, offline Python 3.9+
@@ -51,6 +54,22 @@ For other tasks, provide the text or source facts, describe the reader, and spec
 
 `$clear-writing` explicitly invokes the skill in Codex. Other agents may use different invocation syntax.
 
+### Technical writing
+
+For technical writing, try:
+
+```text
+Use $clear-writing to simplify these instructions. Keep the labels and restrictions.
+If the status is Ready, perform a click on Export and wait for Complete.
+If the status is Failed, retries are prohibited. Return only the edited instructions.
+```
+
+The English profile draws on [ASD-STE100 Issue 9](https://www.asd-ste100.org/about_STE.html).
+It does not include the full standard or its approved dictionary. The Russian profile
+is an independent adaptation, not an official Russian STE equivalent; it draws on
+the cross-language principles of [ISO 24495-1:2023](https://www.iso.org/standard/78907.html).
+Ordinary emails and articles still use the general guide.
+
 ### Install
 
 With Node.js and npm installed, run this from your project directory:
@@ -86,6 +105,7 @@ Start with [`SKILL.md`](skills/clear-writing/SKILL.md), which tells the agent wh
 | Material | English | Russian |
 | --- | --- | --- |
 | Complete guide | [Guide](skills/clear-writing/en/guide.md) | [Руководство](skills/clear-writing/ru/guide.md) |
+| Technical profile | [STE-informed English](skills/clear-writing/en/technical.md) | [Технический русский](skills/clear-writing/ru/technical.md) |
 | Editing techniques | [Patterns](skills/clear-writing/en/patterns.md) | [Приёмы](skills/clear-writing/ru/patterns.md) |
 | Decision table | [Cheatsheet](skills/clear-writing/en/cheatsheet.md) | [Шпаргалка](skills/clear-writing/ru/cheatsheet.md) |
 | Terminology | [Glossary](skills/clear-writing/en/glossary.md) | [Словарь](skills/clear-writing/ru/glossary.md) |
@@ -94,6 +114,10 @@ Start with [`SKILL.md`](skills/clear-writing/SKILL.md), which tells the agent wh
 Six topic chapters cover the reader, wording, evidence, structure, presentation, and writing formats. The agent loads the relevant chapters as needed.
 
 To change the skill, follow the [localization review](skills/clear-writing/references/localization-review.md) and work through the review cases in both languages. These are manual checks; they do not replace reviewing the agent's output for your task.
+
+Repository maintenance and isolated GitHub access are documented in
+[development](docs/development.md). For a before/after comparison, use the
+[technical evaluation procedure](docs/technical-evaluation.md) (both in Russian).
 
 ### Basis and license
 
@@ -109,6 +133,9 @@ The guidance draws on «Пиши, сокращай» by Maxim Ilyakhov and Lyudm
 - **Убрать лишнее.** Заменить канцелярит и расплывчатые оценки прямыми формулировками. Сохранить подробности, которые нужны читателю.
 - **Сохранить смысл.** Не потерять факты, условия, отрицания, степень уверенности, числа и сроки. Не выдумывать недостающие сведения.
 - **Выбрать язык.** Для каждого языка есть полное руководство. При редактуре язык исходника сохраняется, если перевод не запрошен; для двуязычного текста используются оба руководства.
+- **Уточнить технические шаги.** Отдельные профили помогают явно описать подготовку,
+  условия, термины, предупреждения и проверяемый результат: STE-ориентированный
+  английский и ясный технический русский. Это не сертификация по стандарту.
 
 Скилл состоит из инструкций и справочных материалов для AI-агента. Книги и внешние конспекты для работы не нужны.
 Для русской и английской прозы в нём также есть необязательная локальная проверка
@@ -146,6 +173,22 @@ python3 skills/clear-writing/scripts/check_text.py --language ru --file article.
 
 `$clear-writing` явно вызывает скилл в Codex. У других агентов синтаксис вызова может отличаться.
 
+### Технический текст
+
+Для технического текста попробуйте:
+
+```text
+Используй $clear-writing: упрости инструкцию, сохрани подписи и ограничения.
+Если статус Ready, осуществите нажатие Export и дождитесь статуса Complete.
+Если статус Failed, повтор запрещён. Верни только чистовую инструкцию.
+```
+
+Английский профиль опирается на [ASD-STE100 Issue 9](https://www.asd-ste100.org/about_STE.html),
+но не включает полный стандарт и его утверждённый словарь. Русский — самостоятельная
+адаптация, а не официальный аналог STE; общая опора — межъязыковые принципы
+[ISO 24495-1:2023](https://www.iso.org/standard/78907.html).
+Обычные письма и статьи по-прежнему используют общее руководство.
+
 ### Установка
 
 Установите Node.js и npm, затем выполните в каталоге своего проекта:
@@ -181,6 +224,7 @@ test ! -e .agents/skills/clear-writing && \
 | Материал | Русский | English |
 | --- | --- | --- |
 | Полное руководство | [Руководство](skills/clear-writing/ru/guide.md) | [Guide](skills/clear-writing/en/guide.md) |
+| Технический профиль | [Технический русский](skills/clear-writing/ru/technical.md) | [STE-informed English](skills/clear-writing/en/technical.md) |
 | Приёмы редактуры | [Приёмы](skills/clear-writing/ru/patterns.md) | [Patterns](skills/clear-writing/en/patterns.md) |
 | Таблица выбора | [Шпаргалка](skills/clear-writing/ru/cheatsheet.md) | [Cheatsheet](skills/clear-writing/en/cheatsheet.md) |
 | Термины | [Словарь](skills/clear-writing/ru/glossary.md) | [Glossary](skills/clear-writing/en/glossary.md) |
@@ -189,6 +233,10 @@ test ! -e .agents/skills/clear-writing && \
 Шесть тематических глав посвящены читателю, формулировкам, доказательствам, структуре, подаче и форматам текста. Агент читает нужные главы по мере работы.
 
 При изменении скилла пройдите [проверку локализации](skills/clear-writing/references/localization-review.md) и контрольные случаи на обоих языках. Это ручные проверки; они не заменяют оценку ответа агента в вашей задаче.
+
+Проверки репозитория и изолированный вход GitHub описаны в
+[руководстве по разработке](docs/development.md). Для сравнения старой и новой
+редактуры используйте [порядок проверки технического профиля](docs/technical-evaluation.md).
 
 ### Основа и лицензия
 

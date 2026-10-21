@@ -1,8 +1,8 @@
 ---
 name: clear-writing
-description: "Write and edit clear English and Russian text: emails, articles, explanations, instructions, documentation, reports, presentations, UI and product copy. Писать и редактировать понятные тексты на русском и английском. Use for clarity, structure, evidence, tone, and removing bureaucratic language without losing meaning. Full localized guidance combines the methods of «Пиши, сокращай» and «Ясно, понятно»; no books required."
+description: "Write and edit clear English and Russian text: emails, articles, explanations, instructions, documentation, reports, presentations, UI and product copy. Писать и редактировать понятные тексты на русском и английском. Use for clarity, structure, evidence, tone, and removing bureaucratic language without losing meaning. Includes STE-informed English and plain Russian technical profiles for procedures, runbooks, and troubleshooting, not compliance certification. Full localized guidance combines the methods of «Пиши, сокращай» and «Ясно, понятно»; no books required."
 metadata:
-  version: "9"
+  version: "10"
 ---
 
 # Clear writing / Ясный текст
@@ -39,6 +39,23 @@ Preserve an established English variety, house style, terminology, and tone.
 When none is specified, use consistent plain English for the intended audience;
 do not silently change currencies, units, dates, or precision to localize a text.
 Do not load the other edition merely to repeat the same method.
+
+## Practical technical writing
+
+For procedures, runbooks, setup and troubleshooting instructions, and technical
+descriptions, load the selected language's technical profile in addition to its guide:
+[English: STE-informed](en/technical.md) or [Русский: ясный технический текст](ru/technical.md).
+Also load it when the user explicitly requests Simplified Technical English,
+ASD-STE100, or simplified Russian technical writing. Apply it to the technical
+sections, not automatically to articles, emails, or creative writing.
+
+Use consistent terms, explicit conditions, executable steps, and observable checks.
+Preserve hazards, permissions, and the difference between requirements and advice.
+The English profile draws on ASD-STE100 Issue 9; it is not the full standard or its
+approved dictionary. The Russian profile is a local adaptation, not an official
+Russian STE standard. Never claim compliance from these profiles or local scores.
+For a strict compliance request, obtain the applicable standard and project term
+list; identify what remains unverified rather than claiming a certified result.
 
 ## Independent editorial review
 
